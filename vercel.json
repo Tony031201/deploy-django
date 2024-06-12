@@ -7,7 +7,12 @@
       "runtime": "python3.12"
     }
   }],
-  "routes": [{
+  "routes": [
+    {
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
+    },
+    {
     "src": "/(.*)",
     "dest": "newtropical/wsgi.py"
   }]
