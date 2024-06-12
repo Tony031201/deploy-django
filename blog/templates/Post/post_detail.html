@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load static %}
+      {% block body %}
+      
+      <div class="main-wrap">
+        <div class="cover_1 cover_sm">
+          <div class="img_bg" style="background-image: url({% static 'site_static/img/slider-1.jpg' %});" data-stellar-background-ratio="0.5">
+            <div class="container">
+              <div class="row align-items-center justify-content-center">
+                <div class="col-md-7 text-center" data-aos="fade-up">
+                  <h2 class="heading mb-4">{{ post_detail.title }}</h2>
+
+                  <div class="post-info">
+                    <div class="date-info">{{ post_detail.created }}</div>
+                    <div class="category-info"><span class="seperator">|</span>In <a href="#" data-title="View all posts in Lifestyle" title="View all posts in Lifestyle">{{ post_detail.category }}</a></div>
+                    <div class="author-info"><span class="seperator">|</span>By <a href="#">Pius</a></div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> <!-- .cover_1 -->
+
+       <div class="section">
+          <div class="container">
+            
+            <div class="row">
+
+              <div class="col-md-8">
+                <p> {{ post_detail.content }}</p>
+                <div class="tag-widget post-tag-container mb-5 mt-5">
+                  <div class="tagcloud">
+                    {% for tag in post_detail.tags.all %}
+                    <a href="{% url 'blog:post_by_tag' tag  %}" class="tag-cloud-link">{{ tag.name }}</a>
+                    {% endfor %}
+                  </div>
+                </div>
+
+
+
+
+              </div> <!-- .col-md-8 -->
+              <div class="col-md-4 sidebar">
+                <div class="sidebar-box">
+                  <form action="{% url 'blog:post_list' %}" method="GET" class="search-form">
+                    <div class="form-group">
+                      <span class="icon fa fa-search"></span>
+                      <input type="text" class="form-control" name='q' value="{{ request.GET.q }}" placeholder="Type a keyword and hit enter">
+                    </div>
+                  </form>
+                </div>
+                <div class="sidebar-box">
+                  <div class="categories">
+                    <h3>Categories</h3>
+                    {% for category in categories %}
+                        <li><a href="{% url 'blog:post_by_category' category %}">{{ category }} <span>(12)</span></a></li>
+                    {% endfor %}
+                  </div>
+                </div>
+                <div class="sidebar-box">
+                  <img src="img/person_1.jpg" alt="Image placeholder" class="img-fluid mb-4">
+                  <h3>About The Author</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem necessitatibus voluptate quod mollitia delectus aut, sunt placeat nam vero culpa sapiente consectetur similique, inventore eos fugit cupiditate numquam!</p>
+                  <p><a href="#" class="btn btn-primary btn-sm">Read More</a></p>
+                </div>
+
+                <div class="sidebar-box">
+                  <h3>Tag Cloud</h3>
+                  <div class="tagcloud">
+                      {% for tag in tags %}
+                        <a href="{% url 'blog:post_by_category' tag.name %}" class="tag-cloud-link">{{ tag }}</a>
+                      {% endfor %}
+
+                  </div>
+                </div>
+
+                <div class="sidebar-box">
+                  <h3>Paragraph</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem necessitatibus voluptate quod mollitia delectus aut, sunt placeat nam vero culpa sapiente consectetur similique, inventore eos fugit cupiditate numquam!</p>
+                </div>
+              </div>
+
+            </div>
+
+            
+          </div>
+        </div> <!-- .section -->
+      
+
+
+      </div> <!-- .main-wrap -->
+      
+
+      {% endblock %}
