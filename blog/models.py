@@ -12,8 +12,8 @@ class Post(models.Model):
     created = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     image = models.ImageField(upload_to='blog/',blank=True,null=True)
-    tags = TaggableManager(blank=True)
-    category=models.ForeignKey('Category',null=True,on_delete=models.CASCADE)
+    tags = TaggableManager(blank=True,related_name='Posts')
+    category=models.ForeignKey('Category',null=True,on_delete=models.CASCADE,related_name='posts')
 
     class Meta:
         verbose_name = 'Post'

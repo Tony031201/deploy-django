@@ -3,6 +3,10 @@ from .models import *
 from taggit.models import Tag
 from django.core.paginator import Paginator
 from django.db.models import Q
+from .forms import PostTableForm
+from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
+
 # Create your views here.
 def post_list(request):
     post_list = Post.objects.all()
@@ -47,3 +51,46 @@ def post_by_category(request,category):
         'post_list': post_by_category,
     }
     return render(request, 'Post/post_list.html', context)
+
+@login_required(login_url='get:login_view')
+def post_new(request):
+    form = PostTableForm
+    message = ''
+    context = {
+        'form':form,
+    }
+    if request.method == 'POST':
+        form = PostTableForm(request.POST,request.FILES)
+        author = request.user
+        title = request.POST.get('title')
+        content = request.POST.get('content')
+        tags = request.POST.get('tags')
+        image = request.FILES.get('image')
+        category = request.POST.get('category')
+        try:
+            get_category = Category.objects.get(category_name=category)
+        except Category.DoesNotExist:
+            Category.objects.create(category_name=category)
+            get_category = Category.objects.get(category_name=category)
+
+        get_author = User.objects.get()
+        post = Post.objects.create(
+            author=author,
+            title=title,
+            content=content,
+            image=image,
+            category=get_category
+        )
+        tag_list = [tag.strip() for tag in tags.split(',')]
+
+        for tag_name in tag_list:
+            try:
+                get = Tag.objects.get(name=tag_name)
+            except Tag.DoesNotExist:
+                Tag.objects.create(name=tag_name)
+                get = Tag.objects.get(name=tag_name)
+            post.tags.add(get)
+        post.save()
+        return render(request,'Post/post_new.html',context={'form':form,'message':'Post successfully'})
+
+    return render(request,'Post/post_new.html',context)
