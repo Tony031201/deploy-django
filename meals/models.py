@@ -7,9 +7,9 @@ from django.utils.text import slugify
 class Meals(models.Model):
     name = models.CharField(max_length=50)
     description = models.CharField(max_length=500)
-    people = models.IntegerField(default=0)
+
     price = models.DecimalField(max_digits=5,decimal_places=2)
-    preperation_time = models.IntegerField()
+
     image = models.ImageField(upload_to='meals/')
     slug = models.SlugField(blank=True,null=True)
     category = models.ForeignKey('Category',on_delete=models.SET_NULL, null=True)

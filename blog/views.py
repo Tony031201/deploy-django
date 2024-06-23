@@ -9,7 +9,7 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def post_list(request):
-    post_list = Post.objects.all().order_by('-id')
+    post_list = Post.objects.all()  .order_by('-id')
 
     ##search
     search_query = request.GET.get('q')
