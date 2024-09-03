@@ -34,10 +34,10 @@
       <nav class="site-menu">
         <div class="site-menu-inner">
           <ul class="list-unstyled">
-            <li class="active"><a href="/">Home</a></li>
+            <li class="active" style="z-index: 3;"><a href="/">Home</a></li>
             <li><a href="{% url 'aboutus:aboutus_list' %}">About Us</a></li>
-            <li><a href="{% url 'meals:meal_list' %}">Our Menu</a></li>
-            <li><a href="{% url 'blog:post_list' %}">Our Blog</a></li>
+            <li><a href="{% url 'meals:meal_list' %}">Menu</a></li>
+            <li><a href="{% url 'blog:post_list' %}">Event & News</a></li>
             <li><a href="{% url 'subscribe:subscribe' %}">Subscribe Us</a></li>
           </ul>
         </div>
@@ -48,7 +48,7 @@
           <div class="col-5 col-md-3">
              <ul class="list-unstyled social">
               <li><a href="#"><span class="fa fa-facebook"></span></a></li>
-              <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+
               <li><a href="#"><span class="fa fa-instagram"></span></a></li>
             </ul>
           </div>
@@ -74,26 +74,25 @@
               <div class="col-md-6 col-lg-3 mb-5" data-aos="fade" data-aos-delay="100">
                 <div class="footer-widget">
                   <h3>About Restaurant</h3>
-                  <p>We are an Asian fusion restaurant. We will provide you with meticulous service and food.</p>
+                  <p>We are an Asian fusion restaurant. We will provide you with meticulous service and food</p>
                 </div>
               </div>
               <div class="col-md-6 col-lg-3 mb-5" data-aos="fade" data-aos-delay="200">
                 <div class="footer-widget">
                   <h3>Lunch Service</h3>
-                  <p>Wed to Sun: <br> from 11:30 am - 2:30 pm</p>
+                  <p>Wed to Sun: <br>11:30 am - 2:30 pm</p>
                   <h3>Dinner Service</h3>
-                  <p>Wed to Sun: <br> from 5:00 pm - 8:30 pm</p>
+                  <p>Wed to Sun: <br>5:00 pm - 8:30 pm</p>
                 </div>
               </div>
               <div class="col-md-6 col-lg-3 mb-5" data-aos="fade" data-aos-delay="300">
-                <div class="footer-widget">
-                  <h3>Choose Us</h3>
-                  <ul>
-                    <li>Quality Cuisine</li>
-                    <li>Fresh Food</li>
-                    <li>Friendly Staff</li>
-                    <li>Easy Reservation</li>
-                  </ul>
+                <div class="footer-widget footer-contact-widget">
+                  <h3>Contact Us</h3>
+                  <p class="contact-email">info@yourdomain.com</p>
+                    <h3>Location</h3>
+                    <a href="https://www.google.ca/maps/place/The+Tropical+Island+Restaurant/@48.4600223,-123.3358682,17z/data=!3m1!4b1!4m6!3m5!1s0x548f73ef7fc65edd:0xb352e100702560f8!8m2!3d48.4600188!4d-123.3332933!16s%2Fg%2F1vm_xkyq?entry=ttu"><p class="ion-ios-location"> 3690 Shelbourne St #1, Victoria</p></a>
+                    <h3>Phone</h3>
+                  <p class="contact-phone" style="font-size: large;">(250) 477-2538</p>
                 </div>
               </div>
               <div class="col-md-6 col-lg-3 mb-5" data-aos="fade" data-aos-delay="400">
@@ -102,10 +101,6 @@
                   <h3>Subscribe</h3>
                   <a href="{% url 'subscribe:subscribe' %}">Click Here</a>
 
-
-                  <h3>Contact Us</h3>
-                  <p class="contact-email">info@yourdomain.com</p>
-                  <p class="contact-phone">(250) 477-2538</p>
                   
                   
                 </div>
@@ -151,5 +146,3 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="{% static 'site_static/js/main.js' %}"></script>
   </body>
 </html>
-
-<!-- Tony -->

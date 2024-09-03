@@ -115,7 +115,7 @@
 
                           {% for meal in meal_list %}
                               {% if category == meal.category %}
-                                  <div class="d-block d-md-flex menu-food-item">
+                                  <div class="d-block d-md-flex menu-food-item" style="margin-bottom: 10px;padding-bottom: 0;">
                                   <div class="text order-1 mb-3">
                                     <h3><a href="{% url 'meals:meal_detail' slug=meal.slug %}">{{ meal.name }}</a></h3>
                                     <p>{{ meal.description }}</p>

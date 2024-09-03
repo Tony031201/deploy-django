@@ -69,7 +69,7 @@ textarea.form-control {
 
 .btn.btn-outline-primary {
   border-width: 2px;
-  color: #fdb44b;
+  color: #00085b;
 }
 
 .btn.btn-outline-primary:hover, .btn.btn-outline-primary:focus, .btn.btn-outline-primary:active {
@@ -299,7 +299,7 @@ textarea.form-control {
 
 .section-heading .small-sub-heading {
   font-size: 14px;
-  color: #fdb44b;
+  color: #00085b;
 }
 
 @media (min-width: 992px) {
@@ -372,7 +372,7 @@ textarea.form-control {
 .site-tab-nav li a.active {
   color: black;
   background: none;
-  border-bottom: 2px solid #fdb44b;
+  border-bottom: 2px solid #00085b;
 }
 
 .site-tab-nav, .nav-pills {
@@ -390,7 +390,7 @@ textarea.form-control {
 
 .site-footer .footer-widget h3 {
   font-size: 18px;
-  margin-bottom: 20px;
+  margin-bottom: 10px !important;
 }
 
 .site-footer .footer-widget p {
@@ -451,7 +451,7 @@ textarea.form-control {
 }
 
 .menu-food-item .price strong {
-  color: #fdb44b;
+  color: #00085b;
   font-size: 20px;
 }
 
@@ -475,7 +475,7 @@ textarea.form-control {
 }
 
 .footer-contact-widget .contact-email {
-  color: #fdb44b;
+  color: #00085b;
 }
 
 .footer-contact-widget .contact-phone {
@@ -519,7 +519,7 @@ textarea.form-control {
 
 .custom-icon {
   font-size: 70px;
-  color: #fdb44b;
+  color: #00085b;
 }
 
 .form-subscribe .form-group {
@@ -554,7 +554,7 @@ textarea.form-control {
   display: inline-block;
   position: relative;
   margin-bottom: 30px;
-  background: #fdb44b;
+  background: #00085b;
 }
 
 .feature-icon .icon > span {
@@ -651,7 +651,7 @@ textarea.form-control {
 }
 
 .owl-carousel.centernonloop .owl-dots .owl-dot.active {
-  background: #fdb44b;
+  background: #00085b;
 }
 
 .owl-carousel.centernonloop .owl-dots .owl-dot:active, .owl-carousel.centernonloop .owl-dots .owl-dot:focus {
@@ -788,11 +788,11 @@ textarea.form-control {
   -webkit-transition: .3s all ease;
   -o-transition: .3s all ease;
   transition: .3s all ease;
-  background: #fdb44b;
+  background: #00085b;
 }
 
 .owl-carousel.home-slider-loop-false .owl-dots .owl-dot.active {
-  border: 2px solid #fdb44b;
+  border: 2px solid #00085b;
 }
 
 .owl-carousel.home-slider-loop-false .owl-dots .owl-dot.active span {
@@ -983,7 +983,7 @@ textarea.form-control {
   margin: 0;
   border-radius: 50% !important;
   font-size: 16px;
-  background: #fdb44b;
+  background: #00085b;
   color: #fff;
 }
 
@@ -1131,7 +1131,7 @@ textarea.form-control {
 
 .menus .item .text .price {
   font-size: 30px;
-  color: #fdb44b;
+  color: #00085b;
   opacity: 1;
 }
 
@@ -1192,7 +1192,7 @@ textarea.form-control {
 }
 
 .accordion .btn-block[aria-expanded="true"] {
-  color: #fdb44b;
+  color: #00085b;
 }
 
 .accordion .btn-block[aria-expanded="true"] .icon:before {
@@ -1490,3 +1490,160 @@ textarea.form-control {
 .meal_img {
   width:100% !important;
 }
+
+.cover_1 .custom-heading-h3 {
+  color: #fff !important;
+  font-family: "Playfair Display", Arial, sans-serif !important;
+}
+
+<!-- -->
+.carousel {
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+ul.slides {
+    display: block;
+    position: relative;
+    height: 600px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    list-style: none;
+}
+
+.slides * {
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+ul.slides input {
+    display: none;
+}
+
+
+.slide-container {
+    display: block;
+}
+
+.slide-image {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    opacity: 0;
+    transition: all .7s ease-in-out;
+}
+
+.slide-image img {
+    width: auto;
+    min-width: 100%;
+    height: 100%;
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    font-size: 100px;
+    line-height: 600px;
+    color: #fff;
+}
+
+.carousel-controls label {
+    display: none;
+    position: absolute;
+    padding: 0 20px;
+    opacity: 0;
+    transition: opacity .2s;
+    cursor: pointer;
+}
+
+.slide-image:hover + .carousel-controls label{
+    opacity: 0.5;
+}
+
+.carousel-controls label:hover {
+    opacity: 1;
+}
+
+.carousel-controls .prev-slide {
+    width: 49%;
+    text-align: left;
+    left: 0;
+}
+
+.carousel-controls .next-slide {
+    width: 49%;
+    text-align: right;
+    right: 0;
+}
+
+.carousel-dots {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    z-index: 999;
+    text-align: center;
+}
+
+.carousel-dots .carousel-dot {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.5;
+    margin: 10px;
+}
+
+input:checked + .slide-container .slide-image {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 1s ease-in-out;
+}
+
+input:checked + .slide-container .carousel-controls label {
+     display: block;
+}
+
+input#img-1:checked ~ .carousel-dots label#img-dot-1,
+input#img-2:checked ~ .carousel-dots label#img-dot-2,
+input#img-3:checked ~ .carousel-dots label#img-dot-3,
+input#img-4:checked ~ .carousel-dots label#img-dot-4,
+input#img-5:checked ~ .carousel-dots label#img-dot-5,
+input#img-6:checked ~ .carousel-dots label#img-dot-6 {
+	opacity: 1;
+}
+
+
+input:checked + .slide-container .nav label { display: block; }
+
+.p_text{
+    max-height: 20%;
+    position: absolute;
+    display:none;
+    opacity:1;
+    padding: 3px; /* 可选：添加内边距以提高可读性 */
+    text-align: center; /* 中心对齐文本 */
+    font-size: 50px;
+    top:180px;
+    left:30px;
+    bottom: 0;
+}
+
+input:checked + .slide-container .p_text {
+    display: block;
+}
+
+
+
+<!-- -->
