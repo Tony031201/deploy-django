@@ -6,10 +6,14 @@ from django.db.models import Q
 from .forms import PostTableForm
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
+import smtplib
+import os
+from dotenv import load_dotenv
+
 
 # Create your views here.
 def post_list(request):
-    post_list = Post.objects.all()  .order_by('-id')
+    post_list = Post.objects.all().order_by('-id')
 
     ##search
     search_query = request.GET.get('q')
@@ -91,6 +95,8 @@ def post_new(request):
                 get = Tag.objects.get(name=tag_name)
             post.tags.add(get)
         post.save()
+
+
         return render(request,'Post/post_new.html',context={'form':form,'message':'Post successfully'})
 
     return render(request,'Post/post_new.html',context)

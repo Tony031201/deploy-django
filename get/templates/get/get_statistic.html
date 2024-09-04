@@ -93,12 +93,15 @@
                   </div>
                 </form>
                 {% endcomment %}
-                  <form action="" method="post">
+                  <form action="" method="post" style="padding-bottom: 50px;">
                       {% csrf_token %}
 
 
                       <button type="submit" class="btn btn-primary">GET TABLE</button>
                   </form>
+                  <a href="{% url 'get:menu_panel' %}"><button class="btn btn-primary">Menu</button></a>
+                  <a href="{% url 'get:blog_panel' %}"><button class="btn btn-primary">Blog</button></a>
+                  <a href="{% url 'get:send_email' %}"><button class="btn btn-primary">Email</button></a>
 
               </div>
             </div>

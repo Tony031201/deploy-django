@@ -2,6 +2,7 @@ from django.shortcuts import render
 from meals.models import Meals
 from meals.models import Category
 from blog.models import Post
+from django.contrib import messages
 
 # Create your views here.
 def home(request):
@@ -14,7 +15,8 @@ def home(request):
     special6 = specials[5]
     meal_list = Meals.objects.all()
     categories = Category.objects.all()
-    posts = Post.objects.order_by('-created')[:2]
+    post = Post.objects.last()
+
     context = {
         'special1':special1,
         'special2': special2,
@@ -24,6 +26,9 @@ def home(request):
         'special6': special6,
         'meal_list':meal_list,
         'categories':categories,
-        'posts':posts
+        'post':post,
+
     }
+
+
     return render(request,'home/index.html',context)

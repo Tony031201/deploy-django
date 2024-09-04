@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form id="mail_form" method="post">
+    {% csrf_token %}
+    title:<input type="text" id="subject" name="subject" value="{{ title }}"><br>
+        content:<textarea id="message" name="message">{{ content }}</textarea><br>
+        <button type="submit">Submit</button>
+</form>
+{% if title %}
+<a href="mailto:{{ email|join:',' }}?subject={{ title }}&body={{ content|urlencode }}">Send</a>
+{% endif %}
+</body>
+</html>
