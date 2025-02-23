@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load custom_filters %}
+
       {% block body %}
       <div class="main-wrap">
         <div class="cover_1">
@@ -98,12 +99,15 @@
             <div class="row justify-content-center">
               <div class="col-md-8" data-aos="fade-up">
 
-                  <<img class="meal_img" src="{{ meal_detail.image.url }}" alt="">
+                  {% if meal_detail.image %}
+                  <img class="meal_img" src="{{ meal_detail.image.url }}" alt="">
+                  {% endif %}
                   <h2>{{ meal_detail.name }}</h2>
                   <p>{{ meal_detail.description|text_to_html|safe }}</p>
                   <p>Price : {{ meal_detail.price }}</p>
 
-
+{% comment %}
+{% endcomment %}
 
               </div>
             </div>

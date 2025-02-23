@@ -45,12 +45,12 @@ AOS.init({
         navbar.removeClass('scrolled sleep');
       }
     } 
-    if ( st > 350 ) {
+    if ( st > 700 ) {
       if ( !navbar.hasClass('awake') ) {
         navbar.addClass('awake'); 
       }
     }
-    if ( st < 350 ) {
+    if ( st < 700 ) {
       if ( navbar.hasClass('awake') ) {
         navbar.removeClass('awake');
         navbar.addClass('sleep');

@@ -174,6 +174,12 @@ def modify_blog(request,id):
     context = {'form':form}
     return render(request,'get/post_new_blog.html',context)
 
+@login_required(login_url='get:login_view')
+def show_email(request):
+    all_subscribes = subscribe.objects.all()
+    context = {'all_subscribes':all_subscribes}
+    return render(request,'get/show_email.html',context)
+
 def login_view(request):
     context = {}
     if request.method == 'POST':

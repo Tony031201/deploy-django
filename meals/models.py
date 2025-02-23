@@ -8,7 +8,7 @@ class Meals(models.Model):
     name = models.CharField(max_length=50)
     description = models.TextField()
 
-    price = models.DecimalField(max_digits=5,decimal_places=2)
+    price = models.DecimalField(max_digits=5,decimal_places=0)
 
     image = models.ImageField(upload_to='meals/',null=True,blank=True)
     slug = models.SlugField(blank=True,null=True)

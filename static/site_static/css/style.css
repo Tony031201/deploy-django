@@ -116,7 +116,7 @@ textarea.form-control {
 /* Site Menu*/
 .site-menu {
   display: none;
-  background: black;
+  background: #090560;
   left: 0;
   right: 0;
   bottom: 0;
@@ -177,6 +177,8 @@ textarea.form-control {
 }
 
 .site-header .site-logo {
+  display: none;
+  visibility: hidden;
   line-height: 0;
   padding: 10px 20px;
   border: 2px solid #fff;
@@ -217,15 +219,16 @@ textarea.form-control {
 }
 
 .site-header.scrolled .social li a {
-  color: #000;
+  color: #fff!important;
 }
 
 .site-header.scrolled .site-logo {
+  visibility: visible;!important;
   line-height: 1.2;
   display: inline-block;
   position: relative;
   padding: 10px 20px;
-  border: 2px solid #000;
+  border: 2px solid transparent;
   color: #000;
   font-size: 30px;
 }
@@ -239,6 +242,7 @@ textarea.form-control {
 }
 
 .site-header.awake {
+  background: #090560;
   -webkit-transition: .3s all ease;
   -o-transition: .3s all ease;
   transition: .3s all ease;
